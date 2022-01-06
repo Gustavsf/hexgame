@@ -1,0 +1,94 @@
+body {
+  margin: 100px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #706676;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.hexagon {
+  width: 115px;
+  height: 115px;
+  background: rgb(0, 250, 255);
+  -webkit-clip-path: polygon(
+    50% 0%,
+    95% 25%,
+    95% 75%,
+    50% 100%,
+    5% 75%,
+    5% 25%
+  );
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+}
+.hexagon[data-value]::after {
+  transform: rotate(90deg);
+  content: attr(data-value);
+  position: absolute;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  left: 45px;
+  top: 38px;
+  color: white;
+  font-size: 35px;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.appear::after {
+  animation: appear 1s ease-in-out;
+}
+#gameView {
+  width: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  transform: rotate(270deg);
+}
+#gameView #gameStatus {
+  position: relative;
+  top: -20px;
+  right: 100px;
+  width: 250px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transform: rotate(90deg);
+}
+form {
+  width: 500px;
+  margin: 0 auto;
+}
+form input.long {
+  margin-bottom: 30px;
+  width: 400px;
+  display: block;
+}
+form button {
+  width: 100px;
+  font-size: 23px;
+  margin-left: 150px;
+}
